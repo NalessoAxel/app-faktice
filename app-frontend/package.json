@@ -1,0 +1,36 @@
+{
+	"name": "app-frontend",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.4.6",
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"framer-motion": "^8.1.7",
+		"immer": "^9.0.17",
+		"locomotive-scroll": "^4.1.4",
+		"next": "13.1.1",
+		"prop-types": "^15.8.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"zustand": "^4.2.0"
+	},
+	"devDependencies": {
+		"babel-plugin-module-resolver": "^4.1.0",
+		"eslint": "^8.31.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.31.11",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"prettier": "^2.8.1"
+	}
+}
