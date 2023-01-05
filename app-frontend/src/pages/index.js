@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Container from '_comps/GridSystem/Container';
-import Col from '_comps/GridSystem/Col';
-import HomePage from '../comps/Content/HomePage';
+
+import HomePage from '_comps/Content/HomePage';
+import Loader from '_comps/Loader';
 
 function Home({ images }) {
 	return (
@@ -12,6 +12,7 @@ function Home({ images }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 			</Head>
 			<>
+				<Loader />
 				<HomePage images={images} />
 			</>
 		</>

@@ -9,16 +9,19 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@babel/core": "^7.20.12",
 		"@chakra-ui/react": "^2.4.6",
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
 		"framer-motion": "^8.1.7",
 		"immer": "^9.0.17",
 		"locomotive-scroll": "^4.1.4",
-		"next": "13.1.1",
+		"motion": "^10.15.3",
+		"next": "12.3",
 		"prop-types": "^15.8.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"use-resize-observer": "^9.1.0",
 		"zustand": "^4.2.0"
 	},
 	"devDependencies": {

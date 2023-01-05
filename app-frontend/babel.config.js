@@ -11,7 +11,7 @@ module.exports = {
 					_contexts: path.resolve(__dirname, './src/contexts'),
 					_comps: path.resolve(__dirname, './src/comps'),
 					_lib: path.resolve(__dirname, './src/lib'),
-					_utils: path.resolve(__dirname, './src/components/Utils'),
+					_utils: path.resolve(__dirname, './src/comps/Utils'),
 				},
 			},
 		],
