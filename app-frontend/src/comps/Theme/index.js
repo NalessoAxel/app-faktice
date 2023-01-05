@@ -36,7 +36,35 @@ const theme = extendTheme({
 	space,
 	config,
 	styles: {
-		global: (props) => ({}),
+		global: (props) => ({
+			'.loader-container': {
+				position: 'fixed',
+				left: '0',
+				top: '0',
+				right: '0',
+				bottom: '0',
+				zIndex: '999',
+				display: 'flex',
+				paddingRight: '50px',
+				paddingBottom: '50px',
+				justifyContent: 'flex-end',
+				alignItems: 'flex-end',
+			},
+			'.counter-container': {
+				overflow: 'hidden',
+				height: '20vw',
+				minHeight: '20vw',
+			},
+			'image-loader': {
+				zIndex: '9999',
+				marginTop: '0px',
+				marginBottom: '1vw',
+				color: 'white',
+				fontSize: '20vw',
+				lineHeight: '20vw',
+				fontWeight: '300',
+			},
+		}),
 	},
 	components: {},
 });
