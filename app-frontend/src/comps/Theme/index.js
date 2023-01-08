@@ -1,8 +1,12 @@
 import { extendTheme } from '@chakra-ui/react';
-// import { mode } from '@chakra-ui/theme-tools';
+
+import Button from './comps/Button';
+import Heading from './comps/Heading';
 
 // ? https://chakra-ui.com/docs/theming/theme#typography
-const fonts = {};
+const fonts = {
+	body: 'Inter, system-ui, sans-serif',
+};
 
 // ? https://chakra-ui.com/docs/theming/theme#breakpoints
 const breakpoints = ['576px', '768px', '992px', '1200px', '1440px'];
@@ -39,21 +43,17 @@ const theme = extendTheme({
 		global: (props) => ({
 			'.loader-container': {
 				position: 'fixed',
-				left: '0',
-				top: '0',
-				right: '0',
-				bottom: '0',
+				top: '50%',
+				transform: 'translate(-50%, -50%)',
 				zIndex: '999',
 				display: 'flex',
 				paddingRight: '50px',
 				paddingBottom: '50px',
-				justifyContent: 'flex-end',
-				alignItems: 'flex-end',
 			},
 			'.counter-container': {
 				overflow: 'hidden',
-				height: '20vw',
-				minHeight: '20vw',
+				height: '10vw',
+				minHeight: '10vw',
 			},
 			'image-loader': {
 				zIndex: '9999',
@@ -62,11 +62,13 @@ const theme = extendTheme({
 				color: 'white',
 				fontSize: '20vw',
 				lineHeight: '20vw',
-				fontWeight: '300',
 			},
 		}),
 	},
-	components: {},
+	components: {
+		Heading,
+		Button,
+	},
 });
 
 export default theme;

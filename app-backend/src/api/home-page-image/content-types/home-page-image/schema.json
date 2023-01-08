@@ -25,6 +25,12 @@
     },
     "release_number": {
       "type": "string"
+    },
+    "release_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::release-page.release-page",
+      "inversedBy": "home_page_image"
     }
   }
 }

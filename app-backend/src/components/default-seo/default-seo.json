@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_default_seo_default_seos",
+  "info": {
+    "displayName": "DefaultSeo"
+  },
+  "options": {},
+  "attributes": {
+    "MetaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "MetaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "ShareImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "FavIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

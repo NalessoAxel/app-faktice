@@ -1,4 +1,5 @@
 import { useSpring } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 import { useEffect } from 'react';
 import useResizeObserver from 'use-resize-observer';
@@ -7,7 +8,7 @@ import useStore from '_contexts/store';
 
 import MotionBox from '../Utils/MotionBox';
 
-function LocomotiveScroll({ children }) {
+function LocomotiveScrollComp({ children }) {
 	const { ref: container, height = 1 } = useResizeObserver();
 
 	const { scroll, setStore } = useStore();
@@ -67,4 +68,12 @@ function LocomotiveScroll({ children }) {
 	);
 }
 
-export default LocomotiveScroll;
+LocomotiveScrollComp.defaultProps = {
+	children: null,
+};
+
+LocomotiveScrollComp.propTypes = {
+	children: PropTypes.node,
+};
+
+export default LocomotiveScrollComp;

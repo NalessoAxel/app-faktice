@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.20.12
+  '@chakra-ui/icons': ^2.0.15
   '@chakra-ui/react': ^2.4.6
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
@@ -21,6 +22,7 @@ specifiers:
   next: '12.3'
   prettier: ^2.8.1
   prop-types: ^15.8.1
+  qs: ^6.11.0
   react: 18.2.0
   react-dom: 18.2.0
   use-resize-observer: ^9.1.0
@@ -28,6 +30,7 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.20.12
+  '@chakra-ui/icons': 2.0.15_react@18.2.0
   '@chakra-ui/react': 2.4.6_pelg4rypgo2eiltevpzd2iefsa
   '@emotion/react': 11.10.5_2exiyaescjxorpwwmy4ejghgte
   '@emotion/styled': 11.10.5_csjd3nthallvoinafcukdmosde
@@ -37,6 +40,7 @@ dependencies:
   motion: 10.15.3
   next: 12.3.4_pjwopsidmaokadturxaafygjp4
   prop-types: 15.8.1
+  qs: 6.11.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   use-resize-observer: 9.1.0_biqbaboplfbrettd7655fr4n2y
@@ -548,6 +552,26 @@ packages:
     dependencies:
       '@chakra-ui/shared-utils': 2.0.4
       '@chakra-ui/system': 2.3.7_dovxhg2tvkkxkdnqyoum6wzcxm
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icon/3.0.14_react@18.2.0:
+    resolution: {integrity: sha512-ksNDXSByoLFNec/7UANtiy/lHt2NO3/Xe5KIde3zh70yY1QcRQjO8TjvXgYwqLbR0D6OzMGggrZnJKafeZhjRQ==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/shared-utils': 2.0.4
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icons/2.0.15_react@18.2.0:
+    resolution: {integrity: sha512-/Hsefej7DfRMg+Go+gf/UU4PHNMPmba41ogO1K3242aP9VSs/6/qXB3zrZHl21OX/rdrK408VqYEPInLmUwiHw==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/icon': 3.0.14_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -1978,7 +2002,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.1.3
-    dev: true
 
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -2648,7 +2671,6 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
-    dev: true
 
   /get-nonce/1.0.1:
     resolution: {integrity: sha512-FJhYRoDaiatfEkUK8HKlicmu/3SGFD51q3itKDGoSTysQJBnfOcxU5GxnhE1E6soB76MbT0MBtnKJuXyAx+96Q==}
@@ -2726,7 +2748,6 @@ packages:
   /has-symbols/1.0.3:
     resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==}
     engines: {node: '>= 0.4'}
-    dev: true
 
   /has-tostringtag/1.0.0:
     resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==}
@@ -3124,7 +3145,6 @@ packages:
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
-    dev: true
 
   /object-keys/1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
@@ -3319,6 +3339,13 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
     dev: true
+
+  /qs/6.11.0:
+    resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: false
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -3520,7 +3547,6 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.3
       object-inspect: 1.12.2
-    dev: true
 
   /smoothscroll-polyfill/0.4.4:
     resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==}
