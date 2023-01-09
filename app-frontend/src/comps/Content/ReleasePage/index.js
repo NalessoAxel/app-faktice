@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-import AudioPlayer from './AudioPlayer';
 import Header from './Header';
 import Section from './Section';
 

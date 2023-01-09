@@ -1,3 +1,4 @@
+import { AddIcon } from '@chakra-ui/icons';
 import { Heading, Flex, Text, Button } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
@@ -5,21 +6,17 @@ import { useState } from 'react';
 import Col from '_comps/GridSystem/Col';
 import Container from '_comps/GridSystem/Container';
 
-import PauseIcon from '../../Icon/PauseIcon';
-import PlayIcon from '../../Icon/PlayIcon';
-
 import AudioPlayer from './AudioPlayer';
 
 function Section({ releases }) {
-	console.log({ releases });
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const [audioUrlSelected, setAudioUrlSelected] = useState([]);
 
-	const audioDisplayed = (url) => {
+	const audioDisplayed = (url, name) => {
 		const audioArr = [];
-		if (url.length > 0) {
-			audioArr.push(url);
+		if (url.length > 0 && name.length > 0) {
+			audioArr.push(url, name);
 		}
 		setAudioUrlSelected(audioArr);
 
@@ -27,13 +24,11 @@ function Section({ releases }) {
 	};
 
 	const audioInfos = releases.map((release) => release.attributes.tracks);
-	const audioTracks = audioInfos.map((tracks) => tracks.map((track) => track.track_audio.data.attributes.url));
-	console.log({ audioTracks });
 
 	return (
 		<Container bgColor="body" mt="-1px" data-scroll-section>
 			{releases.map((release) => (
-				<Col colStart={4} colEnd={15}>
+				<Col key={`itteration${releases.indexOf(release)}`} colStart={4} colEnd={15}>
 					<Flex flexDir="column" pt="4.75rem">
 						<Heading as="h2" variant="h3">
 							{release.attributes.release_artist_title}
@@ -45,36 +40,48 @@ function Section({ releases }) {
 				</Col>
 			))}
 
-			<Col colStart={17} colEnd={24} pt="4.75rem">
-				<Flex flexDir="column">
-					{audioTracks.map((track) => (
-						<Button
-							onClick={() => {
-								audioDisplayed(track.url);
-								setIsPlaying(!isPlaying);
-							}}
-							bgColor="transparent"
-							border="none"
-							_hover={{ bgColor: 'transparent' }}
-							_active={{ bgColor: 'transparent' }}
-							_focus={{ bgColor: 'transparent' }}
-						>
-							{isPlaying ? <PauseIcon /> : <PlayIcon />}
-						</Button>
-					))}
+			<Col colStart={17} colEnd={26} pt="4.75rem">
+				{audioInfos.map((track) =>
+					track.map((tracks) => (
+						<Flex align="center">
+							<Button
+								key={`itterationAudio${track.indexOf(tracks)}`}
+								onClick={() => {
+									audioDisplayed(tracks.track_audio.data.attributes.url, tracks.track_audio.data.attributes.name);
+									setIsPlaying(!isPlaying);
+								}}
+								bgColor="transparent"
+								border="none"
+								_hover={{
+									_after: {
+										content: `'Listen track'`,
+										position: 'absolute',
+										bottom: '0',
+										right: '10',
+										border: '1px solid black',
+										borderRadius: '5px',
+										background: '#E5E5E5',
+										padding: '4px',
+										fontFamily: 'heading',
+										color: '#000',
+									},
+								}}
+								_active={{ bgColor: 'transparent' }}
+								_focus={{ bgColor: 'transparent' }}
+							>
+								<AddIcon color="#fff" />
+							</Button>
 
-					{audioInfos.map((track) =>
-						track.map((release) => (
-							<Heading as="h4" variant="h4" pt="1rem">
-								{release.track_name}
+							<Heading key={`itterationTrackArr${track.indexOf(tracks)}`} as="h4" variant="h4" pt="1rem">
+								{tracks.track_audio.data.attributes.name}
 							</Heading>
-						))
-					)}
-				</Flex>
+						</Flex>
+					))
+				)}
 			</Col>
+
 			<Col colStart={4} colEnd={25}>
-				{/* <AudioPlayer url={audioUrlSelected} isPlaying={isPlaying} setIsPlaying={setIsPlaying} /> */}
-				audio player
+				<AudioPlayer url={audioUrlSelected[0]} name={audioUrlSelected[1]} />
 			</Col>
 		</Container>
 	);
