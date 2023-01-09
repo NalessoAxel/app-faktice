@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SiteName": {
+      "type": "string",
+      "required": true
+    },
+    "DefaultSeo": {
+      "displayName": "DefaultSeo",
+      "type": "component",
+      "repeatable": true,
+      "component": "default-seo.default-seo",
+      "required": true
+    }
+  }
+}

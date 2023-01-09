@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "release_pages",
+  "info": {
+    "singularName": "release-page",
+    "pluralName": "release-pages",
+    "displayName": "release_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "artist": {
+      "type": "string"
+    },
+    "release_title": {
+      "type": "string"
+    },
+    "release_cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "release_artist_title": {
+      "type": "string"
+    },
+    "release_description": {
+      "type": "richtext"
+    },
+    "tracks": {
+      "displayName": "release_tracks",
+      "type": "component",
+      "repeatable": true,
+      "component": "release-tracks.release-tracks"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "release_artist_title"
+    },
+    "home_page_image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::home-page-image.home-page-image",
+      "mappedBy": "release_page"
+    },
+    "cat_number": {
+      "type": "string"
+    }
+  }
+}

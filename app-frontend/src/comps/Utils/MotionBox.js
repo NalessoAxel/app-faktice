@@ -5,6 +5,7 @@ const _MotionBox = forwardRef((props, ref) => {
 	const { children = null, style, ...rest } = props;
 
 	return (
+		// eslint-disable-next-line react/jsx-props-no-spreading
 		<Box ref={ref} {...rest}>
 			{children}
 		</Box>
