@@ -8,9 +8,9 @@ import Container from '_comps/GridSystem/Container';
 function Header({ releases }) {
 	return (
 		<Container bgColor="body" minH="100vh" data-scroll-section>
-			{releases.map((release) => (
+			{releases.releasePages.data.map((release) => (
 				<>
-					<Col colStart={4} colEnd={24}>
+					<Col colStart={4} colEnd={24} key={release.id}>
 						<Flex justify="space-between" pt="6rem">
 							<Heading as="h2" variant="h2">
 								{release.attributes.artist}
@@ -40,7 +40,7 @@ function Header({ releases }) {
 }
 
 Header.propTypes = {
-	releases: PropTypes.object.isRequired,
+	releases: PropTypes.array.isRequired,
 };
 
 export default Header;
