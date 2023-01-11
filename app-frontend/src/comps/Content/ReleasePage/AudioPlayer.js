@@ -1,11 +1,11 @@
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Text, Image } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 
 import PauseIcon from '../../Icon/PauseIcon';
 import PlayIcon from '../../Icon/PlayIcon';
 
-function AudioPlayer({ url, name }) {
+function AudioPlayer({ url, name, cover }) {
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const [duration, setDuration] = useState(0);
@@ -13,6 +13,7 @@ function AudioPlayer({ url, name }) {
 	const [currentTime, setCurrentTime] = useState(0);
 
 	const audioPlayer = useRef();
+
 	const progressBar = useRef();
 	const animationRef = useRef();
 
@@ -38,6 +39,7 @@ function AudioPlayer({ url, name }) {
 
 	const togglePlayPause = () => {
 		const prevValue = isPlaying;
+
 		setIsPlaying(!prevValue);
 
 		if (!prevValue) {
@@ -66,9 +68,9 @@ function AudioPlayer({ url, name }) {
 	};
 
 	return (
-		<Flex px={2} flexDir="column" w="100%" h="77px" justifyContent="center">
-			<Flex alignItems="center" justifyContent="space-between" pl={6} zIndex="100">
-				<Text color="#fff">Currently Playing: {name}</Text>
+		<Flex px={2} flexDir="column" w="100%" h="150px" justifyContent="center">
+			<Flex alignItems="center" justifyContent="space-between" pt="0.75rem" zIndex="100">
+				<Text color="#fff">Now Playing: {name}</Text>
 			</Flex>
 
 			<Flex w="100%" alignItems="center">
@@ -77,30 +79,39 @@ function AudioPlayer({ url, name }) {
 						<track kind="captions" />
 					</audio>
 
-					<Button background="transparent" border="none" width="75px" fontSize="32px" height="75px" _hover={{ boxShadow: 'none', color: 'tertiary' }} onClick={togglePlayPause}>
+					<Button background="transparent" border="none" width="75px" fontSize="2rem" height="75px" _hover={{ boxShadow: 'none', color: 'tertiary' }} onClick={togglePlayPause}>
 						{isPlaying ? <PauseIcon /> : <PlayIcon />}
 					</Button>
 				</Flex>
 
 				<Flex w="100%" alignItems="center">
-					<Text textStyle="xxl" fontFamily="monospace" px={4} color="#fff">
+					<Text fontFamily="body" px={4} color="#fff">
 						{calculateTime(currentTime)}
 					</Text>
 
 					<input type="range" className="progressBar" defaultValue="0" ref={progressBar} onChange={changeRange} />
 
-					<Text textStyle="xxl" color="#fff" fontFamily="monospace" px={4}>
+					<Text fontFamily="body" px={4} color="#fff">
 						{duration && calculateTime(duration) ? calculateTime(duration) : '00:00'}
 					</Text>
+				</Flex>
+
+				<Flex>
+					<Image src={cover} alt="album cover" objectFit="contain" width="75px" height="75px" />
 				</Flex>
 			</Flex>
 		</Flex>
 	);
 }
+AudioPlayer.defaultProps = {
+	url: '',
+	name: '',
+};
 
 AudioPlayer.propTypes = {
-	url: PropTypes.array.isRequired,
-	name: PropTypes.string.isRequired,
+	url: PropTypes.string,
+	name: PropTypes.string,
+	cover: PropTypes.array.isRequired,
 };
 
 export default AudioPlayer;

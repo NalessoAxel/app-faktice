@@ -41,6 +41,9 @@ const theme = extendTheme({
 	config,
 	styles: {
 		global: (props) => ({
+			':root': {
+				'--seek-before-width': '0',
+			},
 			'.loader-container': {
 				position: 'fixed',
 				top: '50%',
@@ -62,6 +65,43 @@ const theme = extendTheme({
 				color: 'white',
 				fontSize: '20vw',
 				lineHeight: '20vw',
+			},
+			'.progressBar': {
+				width: '100%',
+				appearance: 'none',
+				borderRadius: '10px',
+				position: 'relative',
+				outline: 'none',
+				height: '18px',
+			},
+
+			'.progressBar::before': {
+				content: '""',
+				height: '18px',
+				width: 'var(--seek-before-width)',
+				backgroundColor: 'tertiary',
+				borderTopLeftRadius: '10px',
+				borderBottomLeftRadius: '10px',
+				position: 'absolute',
+				top: '0',
+				left: '0',
+				zIndex: '2',
+				cursor: 'pointer',
+			},
+			'.progressBar::-webkit-slider-thumb': {
+				height: '15px',
+				width: ' 15px',
+				borderRadius: '50%',
+				border: 'none',
+				backgroundColor: 'red',
+				cursor: 'pointer',
+				position: 'relative',
+				margin: '-2px 0 0 0',
+				zIndex: '3',
+			},
+			'.progressBar:active::-webkit-slider-thumb': {
+				transform: 'scale(1.2)',
+				backgroundColor: 'primary',
 			},
 		}),
 	},
