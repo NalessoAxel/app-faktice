@@ -53,6 +53,20 @@
     },
     "cat_number": {
       "type": "string"
+    },
+    "player_cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bandcamp_link": {
+      "type": "string"
     }
   }
 }
