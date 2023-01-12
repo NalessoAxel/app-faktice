@@ -20,6 +20,7 @@ specifiers:
   framer-motion: ^8.1.7
   graphql: ^16.6.0
   immer: ^9.0.17
+  install: ^0.13.0
   locomotive-scroll: ^4.1.4
   motion: ^10.15.3
   next: '12.3'
@@ -29,6 +30,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   use-resize-observer: ^9.1.0
+  wavesurfer.js: ^6.4.0
   zustand: ^4.2.0
 
 dependencies:
@@ -42,6 +44,7 @@ dependencies:
   framer-motion: 8.1.7_biqbaboplfbrettd7655fr4n2y
   graphql: 16.6.0
   immer: 9.0.17
+  install: 0.13.0
   locomotive-scroll: 4.1.4
   motion: 10.15.3
   next: 12.3.4_pjwopsidmaokadturxaafygjp4
@@ -50,6 +53,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   use-resize-observer: 9.1.0_biqbaboplfbrettd7655fr4n2y
+  wavesurfer.js: 6.4.0
   zustand: 4.2.0_immer@9.0.17+react@18.2.0
 
 devDependencies:
@@ -2881,6 +2885,11 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
 
+  /install/0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /internal-slot/1.0.4:
     resolution: {integrity: sha512-tA8URYccNzMo94s5MQZgH8NB/XTa6HsOo0MLfXTKKEnHVVdegzaQoFZ7Jp44bdvLvY2waT5dc+j5ICEswhi7UQ==}
     engines: {node: '>= 0.4'}
@@ -3879,6 +3888,10 @@ packages:
       lethargy: 1.0.9
       object-assign: 4.1.1
       tiny-emitter: 1.2.0
+    dev: false
+
+  /wavesurfer.js/6.4.0:
+    resolution: {integrity: sha512-+i9GkYdMTm998goOWvycWqCgxfbolnuGTPgrdGss7ZbQDuu+n6AHdnJwYnqxW8RZo5A2ck6ztzXbrXGuCi0m5g==}
     dev: false
 
   /which-boxed-primitive/1.0.2:

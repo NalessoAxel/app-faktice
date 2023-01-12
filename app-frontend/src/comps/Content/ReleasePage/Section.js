@@ -9,7 +9,6 @@ import Container from '_comps/GridSystem/Container';
 import AudioPlayer from './AudioPlayer';
 
 function Section({ releases }) {
-	console.log({ releases });
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const cover = releases.releasePages.data.map((playerCover) => playerCover.attributes.player_cover.data.attributes.url);
@@ -54,7 +53,7 @@ function Section({ releases }) {
 							<Button
 								key={`itterationAudio${track.indexOf(tracks)}`}
 								onClick={() => {
-									audioDisplayed(tracks.track_audio.data.attributes.url, tracks.track_name);
+									audioDisplayed(tracks.track_audio?.data?.attributes?.url, tracks.track_name);
 									setIsPlaying(!isPlaying);
 								}}
 								bgColor="transparent"
