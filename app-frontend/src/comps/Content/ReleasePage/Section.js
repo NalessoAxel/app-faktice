@@ -12,8 +12,7 @@ function Section({ releases }) {
 	console.log({ releases });
 	const [isPlaying, setIsPlaying] = useState(false);
 
-	// const cover = releases.releasePages.data.map((playerCover) => playerCover.attributes.release_cover.data.attributes.url);
-	const cover = '';
+	const cover = releases.releasePages.data.map((playerCover) => playerCover.attributes.player_cover.data.attributes.url);
 
 	const bandcampLink = releases.releasePages.data.map((bandcamp) => bandcamp.attributes.bandcamp_link);
 
@@ -100,7 +99,7 @@ function Section({ releases }) {
 }
 
 Section.propTypes = {
-	releases: PropTypes.array.isRequired,
+	releases: PropTypes.object.isRequired,
 };
 
 export default Section;

@@ -14,8 +14,8 @@ export const GET_ALL_SLUG = gql`
 `;
 
 export const GET_SINGLE_RELEASE = gql`
-	query {
-		releasePages {
+	query ($slug: String) {
+		releasePages(filters: { slug: { eq: $slug } }) {
 			data {
 				id
 				attributes {
@@ -24,7 +24,6 @@ export const GET_SINGLE_RELEASE = gql`
 					release_title
 					release_artist_title
 					cat_number
-					slug
 					tracks {
 						track_name
 						track_audio {
@@ -32,6 +31,13 @@ export const GET_SINGLE_RELEASE = gql`
 								attributes {
 									url
 								}
+							}
+						}
+					}
+					player_cover {
+						data {
+							attributes {
+								url
 							}
 						}
 					}

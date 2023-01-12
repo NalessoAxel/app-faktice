@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import ReleasePage from '_comps/content/ReleasePage';
 
-import { GET_SINGLE_RELEASE } from '../../graphql/queries';
+import { GET_ALL_SLUG, GET_SINGLE_RELEASE } from '../../graphql/queries';
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',
@@ -15,7 +15,7 @@ function Slug({ releases }) {
 	return <ReleasePage releases={releases} />;
 }
 export async function getStaticPaths() {
-	const { data } = await client.query({ query: GET_SINGLE_RELEASE });
+	const { data } = await client.query({ query: GET_ALL_SLUG });
 
 	const paths = data.releasePages.data.map((release) => ({
 		params: { slug: release.attributes.slug },
@@ -32,6 +32,7 @@ export async function getStaticProps({ params }) {
 		query: GET_SINGLE_RELEASE,
 		variables: { slug: params.slug },
 	});
+	console.log({ data });
 
 	return {
 		props: { releases: data },
@@ -40,7 +41,7 @@ export async function getStaticProps({ params }) {
 }
 
 Slug.propTypes = {
-	releases: PropTypes.array.isRequired,
+	releases: PropTypes.object.isRequired,
 };
 
 export default Slug;

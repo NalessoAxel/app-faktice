@@ -79,7 +79,7 @@ const theme = extendTheme({
 				content: '""',
 				height: '18px',
 				width: 'var(--seek-before-width)',
-				backgroundColor: 'tertiary',
+				backgroundColor: '#696767',
 				borderTopLeftRadius: '10px',
 				borderBottomLeftRadius: '10px',
 				position: 'absolute',
@@ -93,7 +93,8 @@ const theme = extendTheme({
 				width: ' 15px',
 				borderRadius: '50%',
 				border: 'none',
-				backgroundColor: 'red',
+				backgroundColor: '#9C9C9C',
+				colors: 'white',
 				cursor: 'pointer',
 				position: 'relative',
 				margin: '-2px 0 0 0',
@@ -101,8 +102,9 @@ const theme = extendTheme({
 			},
 			'.progressBar:active::-webkit-slider-thumb': {
 				transform: 'scale(1.2)',
-				backgroundColor: 'primary',
+				backgroundColor: '#696767',
 			},
+			// #A4A4A4
 		}),
 	},
 	components: {

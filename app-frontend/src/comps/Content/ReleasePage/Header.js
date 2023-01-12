@@ -40,7 +40,7 @@ function Header({ releases }) {
 }
 
 Header.propTypes = {
-	releases: PropTypes.array.isRequired,
+	releases: PropTypes.object.isRequired,
 };
 
 export default Header;
