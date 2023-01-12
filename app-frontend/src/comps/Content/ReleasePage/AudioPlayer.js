@@ -6,16 +6,19 @@ import PauseIcon from '../../Icon/PauseIcon';
 import PlayIcon from '../../Icon/PlayIcon';
 
 function AudioPlayer({ url, name, cover }) {
+	const audioPlayer = useRef();
+
+	const progressBar = useRef();
+
+	const animationRef = useRef();
+
 	const [isPlaying, setIsPlaying] = useState(false);
+
+	const [isUrl, setIsUrl] = useState(false);
 
 	const [duration, setDuration] = useState(0);
 
 	const [currentTime, setCurrentTime] = useState(0);
-
-	const audioPlayer = useRef();
-
-	const progressBar = useRef();
-	const animationRef = useRef();
 
 	useEffect(() => {
 		const seconds = Math.floor(audioPlayer.current.duration);
@@ -44,9 +47,11 @@ function AudioPlayer({ url, name, cover }) {
 
 		if (!prevValue) {
 			audioPlayer.current.play();
+
 			animationRef.current = requestAnimationFrame(whilePlaying);
 		} else {
 			audioPlayer.current.pause();
+
 			cancelAnimationFrame(animationRef.current);
 		}
 	};
@@ -105,12 +110,11 @@ function AudioPlayer({ url, name, cover }) {
 }
 AudioPlayer.defaultProps = {
 	url: '',
-	name: '',
 };
 
 AudioPlayer.propTypes = {
 	url: PropTypes.string,
-	name: PropTypes.string,
+	name: PropTypes.string.isRequired,
 	cover: PropTypes.array.isRequired,
 };
 

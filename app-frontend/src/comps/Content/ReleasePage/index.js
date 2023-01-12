@@ -14,7 +14,7 @@ function ReleasePageComps({ releases }) {
 }
 
 ReleasePageComps.propTypes = {
-	releases: PropTypes.array.isRequired,
+	releases: PropTypes.object.isRequired,
 };
 
 export default ReleasePageComps;
